@@ -1,10 +1,122 @@
 .wrapper {
+  --border-radius: 92px;
+  --search-height: 46px;
+  --search--top-space: 9px;
+  --search-button-width: 52px;
+
   height: var(--default-layout-header-height);
   box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .inner {
   height: 100%;
   width: var(--default-layout-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2px;
+  width: 361px;
+  height: var(--search-height);
+  padding-left: 16px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: rgba(22, 24, 35, 0.06);
+  outline: none;
+  border: 1.5px solid transparent;
+
+  .search-input {
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 21px;
+    color: var(--black);
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    flex: 1;
+    color: rgb(254, 44, 85);
+  }
+
+  .search-input::placeholder {
+    color: var(--black);
+  }
+
+  .search-input:not(:placeholder-shown) ~ .search-btn {
+    color: rgba(22, 24, 35, 1);
+  }
+
+  .search-btn::after {
+    content: '';
+    position: absolute;
+    top: var(--search--top-space);
+    right: var(--search-button-width);
+    width: 1px;
+    height: calc(var(--search-height) - var(--search--top-space) * 2);
+    background-color: rgba(22, 24, 35, 0.12);
+  }
+}
+
+.search:hover {
+  border: 1.5px solid #ccc;
+}
+
+.search:hover .search-btn {
+  background-color: #cccccc;
+  color: rgba(22, 24, 35, 0.6);
+  background-color: rgba(22, 24, 35, 0.06);
+}
+
+.clear,
+.loading,
+.search-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.clear,
+.loading {
+  position: absolute;
+  right: calc(var(--search-button-width) + 16px);
+  border-radius: var(--border-radius);
+  background-color: rgba(22, 24, 35, 0.12);
+  color: rgba(22, 24, 35, 0.34);
+  border: none;
+  outline: none;
+}
+
+.search-btn {
+  // border-radius: 9px;
+  width: var(--search-button-width);
+  height: 100%;
+  justify-content: center;
+  color: rgba(22, 24, 35, 0.34);
+  font-size: 1.8rem;
+}
+
+.search-btn:hover {
+  background-color: rgba(22, 24, 35, 0.3);
+}
+
+.search-btn:active {
+  background-color: rgba(22, 24, 35, 0.03) !important;
 }

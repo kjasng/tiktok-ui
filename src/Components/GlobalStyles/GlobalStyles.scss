@@ -7,6 +7,8 @@
   // Default Layout
   --default-layout-header-height: 60px;
   --default-layout-width: 1150px;
+  --black: #000;
+  --text-color: #333;
 }
 
 * {
@@ -31,4 +33,14 @@ body {
   width: var(--default-layout-width);
   margin: auto;
   background: #ccc;
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+}
+
+a[href] {
+  color: var(--text-color);
 }
