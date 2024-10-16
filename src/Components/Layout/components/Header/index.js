@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import { CircleX, Loader, Search, X } from 'lucide-react';
+import { CircleX, EllipsisVertical, Loader, Search, X } from 'lucide-react';
 import 'tippy.js/dist/tippy.css'; // optional for styling
 import Tippy from '@tippyjs/react/headless';
 
@@ -8,12 +8,14 @@ import styles from './Header.module.scss'
 import images from '~/assets/images';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
+import Button from '../../../Button';
+import { Menu } from '../../../Popper';
 
 const cx = classNames.bind(styles)
 
 
 function Header() {
-
+    const [isShow, setIsShow] = useState(false)
     const [searchResult, setSearchResult] = useState([])
 
 
@@ -24,6 +26,7 @@ function Header() {
         }, 0)
     }, [])
 
+    console.log(isShow)
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -72,7 +75,18 @@ function Header() {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('action')}></div>
+
+                <div className={cx('action', "relative, group")}>
+                    <Button className={cx('login-btn')} to="/login" size='large' primary>
+                        Log in
+                    </Button>
+                    <button
+                        className={cx('link-btn')}
+                    >
+                        <EllipsisVertical background='transparent' />
+                    </button>
+                    <Menu />
+                </div>
             </div>
         </header>
     );

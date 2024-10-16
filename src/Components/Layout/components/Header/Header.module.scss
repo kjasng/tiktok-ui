@@ -134,3 +134,30 @@
   font-weight: 600;
   color: rgba(22, 24, 35, 0.5);
 }
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.login-btn {
+  padding: 9px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgba(254, 44, 85, 1);
+  color: var(--white) !important;
+}
+
+.link-btn {
+  height: 100%;
+  padding: 4px 8px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.menu-items {
+  padding: 8px;
+  width: 224px;
+}

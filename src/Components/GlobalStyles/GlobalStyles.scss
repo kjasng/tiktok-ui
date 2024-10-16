@@ -9,6 +9,7 @@
   --default-layout-width: 1150px;
   --black: #000;
   --text-color: #333;
+  --white: #fff;
 }
 
 * {
@@ -39,8 +40,10 @@ button,
 input,
 [tabindex] {
   outline: none;
+  border: none;
 }
 
 a[href] {
   color: var(--text-color);
+  text-decoration: none;
 }
