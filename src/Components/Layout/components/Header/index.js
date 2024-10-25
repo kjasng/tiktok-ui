@@ -19,14 +19,11 @@ function Header() {
     const [searchResult, setSearchResult] = useState([])
 
 
-
     useEffect(() => {
         setTimeout(() => {
             setSearchResult([])
         }, 0)
     }, [])
-
-    console.log(isShow)
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
